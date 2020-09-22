@@ -1,10 +1,16 @@
 {
+    "and-cli": {
+        "aliases": {
+            "d": "dotnet",
+            "dcRb": "dotnet -cRb"
+        }
+    },
     "author": "andculture <developer+code@andculture.com> (http://andculture.com)",
     "bin": {
         "plugin-cli": "plugin-cli.js"
     },
     "dependencies": {
-        "and-cli": "1.2.0",
+        "and-cli": "file:../AndcultureCode.Cli",
         "commander": "6.0.0",
         "shelljs": "0.8.4"
     },

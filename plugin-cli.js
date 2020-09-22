@@ -45,6 +45,6 @@ commandRegistry.registerCommands([
     },
 ]);
 
-program.parse(process.argv);
+commandRegistry.registerAliasesFromConfig().parseWithAliases();
 
 // #endregion Entrypoint
