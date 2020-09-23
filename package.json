@@ -1,8 +1,7 @@
 {
     "and-cli": {
         "aliases": {
-            "d": "dotnet",
-            "dcRb": "dotnet -cRb"
+            "d": "dotnet"
         }
     },
     "author": "andculture <developer+code@andculture.com> (http://andculture.com)",

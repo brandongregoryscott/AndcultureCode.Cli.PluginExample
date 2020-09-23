@@ -45,6 +45,12 @@ commandRegistry.registerCommands([
     },
 ]);
 
-commandRegistry.registerAliasesFromConfig().parseWithAliases();
+commandRegistry
+    .registerAliasesFromConfig()
+    .registerAlias({
+        command: "dcRb",
+        description: "dotnet -cRb",
+    })
+    .parseWithAliases();
 
 // #endregion Entrypoint
