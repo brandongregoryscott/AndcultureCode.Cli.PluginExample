@@ -207,6 +207,12 @@ Commands:
 
 ## Notes / limitations
 
+#### Do I need to write a cli.js for my project?
+
+Unless you're planning on writing some commands specific to your project (build scripts, utility commands, etc that you want available for regular developer usage but don't make sense to live in the main `and-cli` repository), you probably don't need to go through the effort of setting up a custom CLI project.
+
+Most projects can probably leverage the `and-cli` alone. Generally, they will contain a `package.json` file at the root which depends on the `and-cli`. The alias provided by `and-cli install` runs `npx and-cli` under the hood, which will prefer a local installation of the package over a global one.
+
 #### Adding an option to an existing base command
 
 As of right now, consumers are unable to add additional options/flags to a base command that is exported from the [`and-cli`](https://github.com/andculturecode/AndcultureCode.Cli). I think that would require some way to run a 'pre-parse' hook to tack on additional options before parsing arguments and running the command body, or possibly a larger refactor of the way we are registering commands in the base CLI. There is a [documented issue](https://github.com/tj/commander.js/issues/1197) (that is still being updated/vetted) on the [`commander.js`](https://github.com/tj/commander.js) repo for discussion around pre/post hooks.
@@ -268,6 +274,7 @@ Currently, the `and-cli install` command is hard-coded to create an alias for `a
 ```
 
 _Note: While not required for the executable to run, it is probably a good idea to ensure the bin name is the same as your package name, ie:_
+
 ```JSON
 "name": "plugin-cli",
 ```
@@ -281,7 +288,6 @@ npm install -g .
 ```
 
 3. You can then change to another directory and run it directly by the bin name.
-
 
 ```SH
 cd ~/some/other/directory
